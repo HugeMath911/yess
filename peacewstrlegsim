@@ -51,21 +51,10 @@ local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
 request(abcdef)
 wait(1)
 
+setclipboard("https://discord.gg/WuT5JjexXQ")
+
 -- GameCheck under
 if game.PlaceId == 13802578990 then -- PlaceId of Strong Leg Simulator
-
-
--- HWID Check under
-local HWIDTable_xd4469xd = loadstring(game:HttpGet("https://pastebin.com/raw/CvdMXGjX"))()
-local HWID_x694496y = game:GetService("RbxAnalyticsService"):GetClientId()
-
-for i,v in pairs(HWIDTable_xd4469xd) do
-	if v == HWID_x694496y then
-	print("Welcome to Exkalibur Scripts", Name)
-	else setclipboard("https://discord.gg/WuT5JjexXQ") wait(3)
-	game:GetService("Players").LocalPlayer:Kick("You are not whitelisted. Join the Discord Server by paste link")
-	end
-end
 
 -- Opens Rayield GUI if Keysystem done
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/Dxrknessq/paidscripts/main/rayfieldloader'))()
@@ -127,6 +116,17 @@ local W = Rayfield:CreateWindow({
       Key = {"Exkalibur_A86474AC1695A43727F17576F8E1BD6512DD754344EA4166F99D26B219"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
+
+-- HWID Check under
+local HWIDTable_xd4469xd = loadstring(game:HttpGet("https://pastebin.com/raw/CvdMXGjX"))()
+local HWID_x694496y = game:GetService("RbxAnalyticsService"):GetClientId()
+
+for i,v in pairs(HWIDTable_xd4469xd) do
+	if v == HWID_x694496y then
+	print("Welcome to Exkalibur Scripts", Name)
+	else game:GetService("Players").LocalPlayer:Kick("You are not whitelisted. Join the Discord Server by paste the Link")
+	end
+end
 
 -- All Tabs [1-6]
 local Home = W:CreateTab("🏡Home🏡") -- Creates "Home" Tab
@@ -287,7 +287,7 @@ end
 -- AutoTrain Settings
 Autofarm:CreateSection("AutoTrain with Enable/Disable")
 Autofarm:CreateButton({
-    Name = "Train for Power",
+    Name = "Train for Power | Join the game group so this can work",
     Callback = function()
     local args = {
     [1] = "AutoTrain"
@@ -588,5 +588,6 @@ Teleport:CreateButton({
 })
 
 -- under this is a Kick Script
+
 else game:GetService("Players").LocalPlayer:Kick("You cant use this script here") 
 end
